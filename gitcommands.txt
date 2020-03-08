@@ -28,4 +28,5 @@ git push [remote][branch]
 git diff - To see the difference between working directory and staging
 git log - history
 git log -p -> history with complete details
-git checkout -- [filename] -> undo changes
+git checkout -- [filename] -> undo changes from working directory
+git reset HEAD [filename] -> undo changes from staging ( Just added to staging and not committed - from history the latest file is undo)
