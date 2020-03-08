@@ -1,0 +1,26 @@
+git init
+git init [repositoryname]
+git clone
+
+git status
+git add [file name] 	 
+git add .
+git add --all (after deleting all files)
+
+git commit
+git commit -m "[comments]"
+
+git branch [branchname]
+git checkout [branchname]
+git checkout -b [branchname]
+
+git branch -d dev
+git branch -D dev
+
+git merge [branchname] - Effient way - Go to dev and merge master[git merge master]
+
+git branch -D [branchname]
+
+git pull [remote][branch] - This is a two step process (fetch & merge) behind the scenes
+
+git push [remote][branch]
