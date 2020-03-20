@@ -1,6 +1,27 @@
-docker run -p 5000:5000 XYZ/image
-docker run -p 5000:5000 -d XYZ/image
+docker run -p 5000:5000 [XYZ/image] - docker container run -p 5000:5000 [XYZ/image]
+docker run -p 5000:5000 -d [XYZ/image]
 docker logs [id]
 docker container ls -a
 docker images
 docker tag xyz/restservice:0.0.1.Release xyz/restservice:latest
+docker search [image]
+docker history [image ID]
+docker image inspect [image ID]
+docker remove image [image ID]
+
+docker container pause [image ID]
+docker container logs -f [image ID]
+docker container unpause [image ID]
+docker container inspect [image ID]
+docker container prune  - Removes all the stopped containers
+docker container stop [image ID] - gracefully shutdowns the container
+docker container kill [image ID]
+docker container run -p 5000:5000 -d --restart=always [XYZ/image] - whene docker starts, automatically starts the container
+
+docker events
+docker top [image ID] - shows the proceas running
+docker status
+docker container run -p 5000:5000 -m 512m -cpu-quota 5000 -d [XYZ/image] 
+
+docker system df
+
