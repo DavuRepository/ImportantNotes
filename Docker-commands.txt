@@ -25,3 +25,6 @@ docker container run -p 5000:5000 -m 512m -cpu-quota 5000 -d [XYZ/image]
 
 docker system df
 
+
+
+
