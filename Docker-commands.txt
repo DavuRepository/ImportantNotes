@@ -1,0 +1,6 @@
+docker run -p 5000:5000 XYZ/image
+docker run -p 5000:5000 -d XYZ/image
+docker logs [id]
+docker container ls -a
+docker images
+docker tag xyz/restservice:0.0.1.Release xyz/restservice:latest
