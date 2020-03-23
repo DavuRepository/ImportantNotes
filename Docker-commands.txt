@@ -25,6 +25,18 @@ docker container run -p 5000:5000 -m 512m -cpu-quota 5000 -d [XYZ/image]
 
 docker system df
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------
+DockerJava image creation --
+1)Manual running the step by step to create a docker Image
+  a)Create a application Jar file
+  b)Run the openjdk:8-jdk-alpine - [creates a container]-docker run -dit openjdk:8-jdk-alpine,docker container exec containerName ls /tmp
+  c)Copy the application jar into the container   - docker container cp target/application.jar containerName:/tmp
+  d)Save the new container(copied) - docker container commit --change='CMD ["Java","-jar","/tmp/application.jar"]' containerName newName
+  e)Run the container
+2)Create DockerFile and run - Useing docker build command - [docker build -t imageName .] 
+3)Spotify using DockerFile
+4)unpack plugin using DockerFile
+5)JIB - Just plugin without any DockerFile - Only for Java
+6)fabric8io - It is first came into market - 2015
 
 
