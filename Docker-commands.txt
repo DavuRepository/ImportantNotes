@@ -38,5 +38,14 @@ DockerJava image creation --
 4)unpack plugin using DockerFile
 5)JIB - Just plugin without any DockerFile - Only for Java
 6)fabric8io - It is first came into market - 2015
+----------------------------------------------------------------------------------------------------------------------------------------------
+Pushing the Docker image to the dockerhub --
+1)Create an account in the dockerhub.
+2)Create a image using Maven-Plugin(spotify) and Docker file.
+3)Run the Docker image in the local Docker engine.
+4)docker container ls
+5)Take the docket id and commit the image for example - [docker commit 9a77abd8e544 davudocker/aws-hello-world-rest-api-1:1]
+6)docker images
+7)docker push davudocker/aws-hello-world-rest-api-1:1
 
 
