@@ -13,7 +13,7 @@ docker container pause [image ID]
 docker container logs -f [image ID]
 docker container unpause [image ID]
 docker container inspect [image ID]
-docker container prune  - Removes all the stopped containers
+docker container prune  - Removes all the stopped containers	
 docker container stop [image ID] - gracefully shutdowns the container
 docker container kill [image ID]
 docker container run -p 5000:5000 -d --restart=always [XYZ/image] - whene docker starts, automatically starts the container
@@ -47,5 +47,6 @@ Pushing the Docker image to the dockerhub --
 5)Take the docket id and commit the image for example - [docker commit 9a77abd8e544 davudocker/aws-hello-world-rest-api-1:1]
 6)docker images
 7)docker push davudocker/aws-hello-world-rest-api-1:1
+
 
 
