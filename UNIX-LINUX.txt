@@ -1,0 +1,39 @@
+Session 1 -
+
+Chaacterstics of UNIX:
+-----------------------
+1)It is Freeware.
+2)It is Opensource.
+FOSS - Freeware and OpenSoure Software
+3)It is multi user operation system.
+4)Multiple tasks can be executed simutaneously - Multi tasking system
+5)Base version is CUI - Laster flavours are GUI and CUI
+
+mkdir dir{1..100} - make 100 directories
+To create a file the cmd is : touch
+touch dir{1..100}/file{1..100}.txt
+
+6)It is very secure
+  File permissions - can be set at user,group and others level
+  
+ What are various flavours of UNIX?
+-----------------------------------
+1)Redhat
+2)Ubuntu 
+3)Centos
+4)Fedora
+5)Slackware
+6)Open Solaries
+7)kali
+8)Mint
+9)Suse Linux Enterprise Server
+10)Open Suse
+
+distrowatch.com - for list of falvours
+
+Components of UNIX
+-------------------
+Two main components
+  1. Shell
+  2. Kernel - Memory allocation and processor allocation is taken by it.
+
