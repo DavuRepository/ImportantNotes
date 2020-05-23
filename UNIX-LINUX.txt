@@ -77,7 +77,44 @@ www.linuxzoo.net
 #Linux file system follows tree like structrue  
 
 #difference between / and root directory - it is root users home directory
-#su - swith user
-#su - user2
-#sudo - super user do (sudo -i)
+14. su - swith user
+15. su - user2
+16. sudo - super user do (sudo -i)	
+
 ### $ Normal user, # super user
+
+Directory navigations commands
+------------------------------
+#Symbol(~) - cd ~ ===> will take to the user's home directory
+#cd  ===> will take to the user's home directory
+#################################################################################################################
+
+Session - 3
+
+17.ls ==> Displays files in alphabetical order
+#ls -r ==> reverse of alphabetical order
+#man pages --> manual pages(documentation for command) --> man <<command name>>
+#ls -l
+
+Permissions of file.
+The first character represents type of file.
+- means normal file
+d means directory 
+
+First 3 represents user/owner permissions
+Next 3 represents group permissions
+Last 3 represents others permissions
+
+18. ls -a ==> for all files including hidden files also.
+19. ls -l -t ==> length and most recent time on top and old at bottom
+20. ls -l -t -r ===> length and most old time on top and recent at bottom
+21. ls -R ===> subdirectories and its files(recursive)
+22. ls -f ===> disable colour
+23. ls -F ===> dir1/ , test.sh* ,xyz@ 
+24. ls -l /etc | head -15 (default 10)
+25. ls -l /etc | tail -15 (default 10)
+26. ls -l /etc | head - 15 | tail -5 (In the fifteen last five)
+27. ls -l /etc | more (page by page using tab - only forward)
+28. ls -l /etc | less (page by page - bidirectional. d - forward, b - previous)
+#Date
+
