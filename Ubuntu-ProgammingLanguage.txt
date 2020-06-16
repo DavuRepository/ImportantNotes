@@ -1,0 +1,19 @@
+ls comamnds
+------------
+ls -ls ---> sort by Size of the file
+ls documents/
+ls documents/*.html ---> prints all html files
+ls -lS > out.txt(result is stored in the out.txt)
+ls -d */ ---> list oot all directories
+man ls ---> help commmand 
+------------
+cd comamnds
+------------
+cd ~
+cd /
+cd documents
+cd absolute path
+--------------
+cat comamnds
+------------
+cat list1.txt lixt2.txt > out.txt ---> result will be stored in the out.txt
