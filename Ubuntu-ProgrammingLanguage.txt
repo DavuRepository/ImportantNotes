@@ -17,3 +17,24 @@ cd absolute path
 cat comamnds
 ------------
 cat list1.txt lixt2.txt > out.txt ---> result will be stored in the out.txt
+------------
+I/o - Redirection
+------------
+cat > out.txt
+cat >> result.txt
+-------------------
+mkdir
+---------------
+mkdir images
+mkdir images/pics
+mkdir -p names/mark
+mkdir -p names/{john,rob,nick}
+--------------------
+rm and rmdir
+---------------------
+rm -ra a(top level directory)
+rmdir  - works for single directory
+----------------------------
+cp commmand
+-------------
+mv commmand
