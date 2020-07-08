@@ -38,3 +38,25 @@ rmdir  - works for single directory
 cp commmand
 -------------
 mv commmand
+
+
+============================================================================================================================
+Linux Academy -->
+
+cat /etc/*release*
+cat /etc/*issue*
+lsb_release -a
+hostnamectl
+------------------
+pwd
+cd ~
+w
+last
+w > log.txt
+last >> log.txt
+cat log.txt
+----------------
+Adding path to ./profile --->
+echo 'PATH="$PATH:$HOME/Scripts"' >> ./profile
+----------------------
+wc -L longfile.txt >> value.txt
