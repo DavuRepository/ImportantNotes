@@ -48,6 +48,92 @@ cat /etc/*issue*
 lsb_release -a
 hostnamectl
 ------------------
+ls -alsh
+var1="This is a varialble"
+echo $var1
+echo $PSI - Primary Prompt String, $HOME, $PATH
+
+Quote -->
+Escape Charater
+Single Quote - echo 'This is a $var1' ---> will not include the value of var1.
+Double Quote - echo "This is a $var1" ---> will include the value of var1
+
+-----------------------------------------------------------------------------------
+Copy ~/Practice/Test to ~/Report/.
+	cp -R Practice/Test/ Report
+Rename and move ~/Report/sos_commands/filesys/mount_-l to ~/Report/mounts.txt.
+	cd Report/
+	mv sos_commands/filesys/mount_-l mounts.txt
+
+Remove the Requested Files and Folders
+Remove etc/selinux/.
+	rm -rf etc/selinux/
+Remove var/log/boot.log.
+	rm -rf var/log/boot.log
+Remove anything in proc/ that is or starts with a number.
+	rm -rf proc/[1-9]*
+Remove anything in etc/ that ends in .conf.
+	rm -rf etc/*.conf
+Remove anything in sys/module that starts with ip6t.
+	rm -rf sys/module/ip6t*
+--------------------------------------------------------------
+Search
+-----------
+grep Apple filename
+
+grep -E M filename
+
+cat filename | grep Apple
+wc -l filename
+!wc - executes the previous command
+!cat - executes the previous command
+cat /etc/passwd |grep venkat | cut  -d: -f6 ===> Gives user home directory
+
+Pipeing
+---------
+ls /usr/share/ | wc -l
+ls /usr/share/ | wc -l > ~/value.txt
+
+cat /var/log/dpkg.log | grep unpacked | wc -l
+cat /var/log/dpkg.log | grep unpacked | wc -l >> ~/value.txt
+
+cat /var/log/dpkg.log | wc -l
+cat /var/log/dpkg.log | wc -l >> ~/value.txt
+
+------------------
+#!/bin/bash  
+
+login_user=cloud_user
+if [ -n $1 ]
+then
+   ssh -o StrictHostKeyChecking=no $login_user@$1
+fi
+:wq!
+chmod u+x bin/lab.sh
+./bin/lab.sh 10.0.1.10
+echo 'PATH="$HOME/bin:$PATH"' >> .bashrc
+source .bashrc
+lab.sh 10.0.1.10
+-------------------------
+Hardware comamnds
+-------------------------
+df -h
+sudo lshw
+cat /proc/cpuinfo
+lscpu
+cat /proc/meminfo
+sudo dmidecode
+free -m
+sudo dmidecode
+
+
+
+
+Create a New File in `~/Report/`
+Create a new file named Done.txt in ~/Report/.
+	touch Done.txt
+
+--------
 pwd
 cd ~
 w
