@@ -26,3 +26,18 @@ db.pets.insert([ { "_id": 1, "pet": "cat" },
                  { "_id": 3, "pet": "fish"},
 				 { "_id": 4, "pet": "snake"}],
 				 { "ordered": false })
+				 
+db.pets.insert({
+ "_id": ObjectId("5ec414e5e722bb1f65a25451"),
+ "pet": "wolf",
+ "domestic?": false,
+ "diet": "carnivorous",
+ "climate": ["polar", "equatorial", "continental", "mountain"]
+})
+---------------------------------------------------------------------				 
+db.trips.find({ "tripduration": { "$lte" : 70 },
+                "usertype": { "$ne": "Subscriber" } }).pretty()
+				
+db.zips.find({"pop" : {"$lt":1000}}).count()
+db.trips.find({"birth year":1998}).count()
+db.trips.find({"birth year":{"$gt":1998}}).count()
