@@ -53,6 +53,21 @@ Pushing the Docker image to the dockerhub --
    b) JIB
    c) fabric8io
 
-#Creation of war file in spring boot with out tomcat
-  a) make the tomcat dependency scope as provided
-  b) extend the springboot fromspringbootservletinitializer    
+## Creation of war file in spring boot with out tomcat
+    a) make the tomcat dependency scope as provided
+    b) extend the springbootApplication class from springbootservletinitializer
+---------------------------------------------------------------
+## Connecting to MySqL and Springboot
+    a) Need to establish network bridge between two containers(MySQL & Springboot)
+  ex:: docker container run -p 8080:8080 --link=mysql -e RDS_HOSTNAME=mysql [imageName+tag] - Not recommended approach
+  ##docker network ls
+     A) BRIDGE
+     B) HOST
+     C) NONE
+## Create custom network -> refer in28minutes documentation
+***************Docker Volumes******************
+append  to the docker run ---> "--volume mysql-database-volume:/var/lib/mysql"
+
+******FRONT END DOCKER IMAGE*********
+2 stage builds are better when multiple developers are creating the images - It will be same (JDK and MAVEN builds are run on container)
+**************Docker Compose**************
