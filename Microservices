@@ -55,4 +55,5 @@ Listener      Listener
  # Scale out ---> Increase
  # Scale in ---> Decrease
 
-# APP Mesh -----> Monitors all the Microservices and communicates with each other 
+## APP Mesh -----> Monitors all the Microservices and communicates with each other
+ #The pre-requisite for App Mesh is we need to configure Service Discovery on all Microservices(Common name irrespective of tasks)
