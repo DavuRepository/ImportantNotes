@@ -42,3 +42,4 @@ task
  1) task some memory and agent take few memory on EC2 instance
  2) Task placement
  3) ECS instance Vs Ec2 instance Vs container instance
+# Service Events for debugging
