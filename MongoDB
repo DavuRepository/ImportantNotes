@@ -17,7 +17,7 @@ db.zips.find({"state": "NY", "city": "ALBANY"})
 db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()
 
 db.inspections.find({"birth year":1961, "start station name" : "Howard St & Centre St"})
-------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 db.inspections.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },
                        { "_id": 3, "test": 3 }],{ "ordered": false })
 
@@ -56,5 +56,37 @@ db.trips.find({"birth year":{"$gt":1998}}).count()
                           { "$or" :[ { "airplane": "CR2" },
                                      { "airplane": "A81" } ] }
                          ]}).pretty()
-db.inspections.find({$and:[{"sector":"Home Improvement Contractor - 100"},{"result":"Out of Business"}]}).count()
+db.inspections.find({$and:[{"sector":"Home Improvement Contractor - 100"},{"result":"Out of  --> compares the values in the same documentBusiness"}]}).count()
 db.companies.find({$and:[{$or:[{"founded_year":2004},{"founded_month":10}]},{$or:[{"category_code":"social"},{"category_code":"web"}]}]})
+
+$expr --> compares the values in the same document
+
+db.trips.find({ "$expr": { "$eq": [ "$end station id", "$start station id"] }
+              }).count()
+
+db.trips.find({ "$expr": { "$and": [ { "$gt": [ "$tripduration", 1200 ]},
+                                       { "$eq": [ "$end station id", "$start station id" ]}
+                                     ]}}).count()
+
+  -------------------------------------------------------------------------
+  ## Array Operators --->
+
+  db.listingsAndReviews.find({ "amenities": {
+                                  "$size": 20,
+                                  "$all": [ "Internet", "Wifi",  "Kitchen",
+                                           "Heating", "Family/kid friendly",
+                                           "Washer", "Dryer", "Essentials",
+                                           "Shampoo", "Hangers",
+                                           "Hair dryer", "Iron",
+                                           "Laptop friendly workspace" ]
+                                         }
+                            }).pretty()
+
+# Array Operators and Projection
+db.listingsAndReviews.find({ "amenities": "Wifi" },
+                           { "price": 1, "address": 1, "_id": 0 }).pretty()
+# Array 0f documents in main documents
+db.grades.find({ "scores": { "$elemMatch": { "type": "extra credit" } }}).pretty()
+
+
+db.companies.find({ "offices": { "$elemMatch": { "city": "Seattle" }}})
