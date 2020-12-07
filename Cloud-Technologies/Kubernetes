@@ -1,0 +1,15 @@
+# Maintaining 100 Apps with 1000's of Microservices is painful and chaos
+# Mostly run in docker containers
+# Running directly in docker engine without any container orchestration engine(COS) - cannot accomplish the features of clustering, scalability and Scheduling
+# COE features
+  1) clustering
+  2) Scheduling
+  3) Scalability
+  4) Load balancing
+  5) Fault tolerance
+  6) Deployment(Rolling update, Canary - no  downtime)
+
+# COE Engines (Top 3)
+  1) Marathon from Apache Mesos
+  2) Docker Swarm from Docker Inc
+  3) Kubernetes from CNCF
