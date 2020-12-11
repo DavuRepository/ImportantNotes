@@ -10,6 +10,20 @@
   6) Deployment(Rolling update, Canary - no  downtime)
 
 # COE Engines (Top 3)
-  1) Marathon from Apache Mesos
-  2) Docker Swarm from Docker Inc
-  3) Kubernetes from CNCF
+  1) Kubernetes from CNCF
+  2) Marathon from Apache Mesos
+  3) Docker Swarm from Docker Inc
+  4) Cloud specific COE
+     a) Google Kubernetes Service(GKS)
+     b) AWS (ECS)
+     c) Azure (Azure container services)
+  5) Rancher (Can be host on more than one server)
+  6) Nomad(Clustering and Scheduling, Unix flavour)
+
+  ##Kubernetes
+   1) Master - API Server, Scheduler(Schedules the pods), control manager, etcd(light weight DB-Key-Value)
+   2) Worker(Node) --> pod --> container
+      it should run a docker or rocket
+      kubelet
+      kube-proxy
+  # Kubernetes supports 5000 worker nodes in a cluster    
