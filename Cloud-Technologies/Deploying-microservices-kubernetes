@@ -10,7 +10,7 @@
 
 #Features
 Container orchestration
-Easy Scalaing
+Easy Scaling
 Load Balancing
 Self Healing
 Zero Downtime deployments
@@ -18,6 +18,7 @@ Cloud Neutral
 
 
 #To connect from command line to my cluster--->
+ gcloud auth login
  gcloud container clusters get-credentials davu-cluster --zone us-central1-a --project dazzling-rex-286108
 
  #For resizeing the nodes
