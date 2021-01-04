@@ -21,8 +21,9 @@ Cloud Neutral
  gcloud auth login
  gcloud container clusters get-credentials davu-cluster --zone us-central1-a --project dazzling-rex-286108
 
+gcloud container clusters get-credentials davu--cluster-stackdrive --zone us-central1-c --project dazzling-rex-286108
  #For resizeing the nodes
-1)gcloud container clusters resize --zone us-central1-a davu-cluster --num-nodes=0 --project dazzling-rex-286108
+1)gcloud container clusters resize --zone us-central1-c davu--cluster-stackdrive  --num-nodes=0 --project dazzling-rex-286108
 
  gcloud container clusters resize --zone us-central1-a davu-cluster --num-nodes=3 --project dazzling-rex-286108
 
