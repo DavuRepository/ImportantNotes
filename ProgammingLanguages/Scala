@@ -39,7 +39,6 @@ transformInt(3,x => x*x*x)
                            |
                         Mapreduce
                         Spark
-
   # In memory execution
      Data is processed in RAM
   # Lazy execution
