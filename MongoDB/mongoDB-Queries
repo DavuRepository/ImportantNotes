@@ -1,3 +1,6 @@
+net stop MongoDB
+mongod --dbpath "my/new/path" (on Windows, use backslashes + the drive name => mongod --dbpath "C:\my\path").
+
 mongo "mongodb+srv://sandbox.9ezyl.mongodb.net/sandbox" --username m001-student"
 
 m001-mongodb-basics
