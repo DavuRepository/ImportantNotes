@@ -1,0 +1,54 @@
+Type Inference
+In Scala, you don't require to mention data type and function return type explicitly.
+Scala is enough smart to deduce the type of data. The return type of function is determined by the type of last expression present in the function.
+
+Singleton object
+In Scala, there are no static variables or methods. Scala uses singleton object, which is essentially class with only one object in the source file. Singleton object is declared by using object instead of class keyword.
+
+Scala Pattern Matching
+Pattern matching is a feature of scala. It works same as switch case in other programming languages. It matches best case available in the pattern.
+
+for( a <- 1 to 10 ){
+        println(a);
+     }
+
+# Never use loops - instead use tail recursive -
+# Call By Name is Lazy (Value evaluated at run time)
+
+# Functions
+def squareIt(x:Int):Int = {
+  x*x
+}
+
+println(squareIt(2))
+
+def transformInt(x:Int, f:Int => Int):Int = {
+  f(x)
+}
+
+transformInt(3,squareIt)
+
+transformInt(3,x => x*x*x)
+
+#### Spark has it own map, reduce and filter functions
+## concatenate the lists using
+
+************************Apache Spark*************************************************************************************
+
+## Source --> Ingest --> Process --> Store --> Serve Data
+                           |
+                        Mapreduce
+                        Spark
+  # In memory execution
+     Data is processed in RAM
+  # Lazy execution
+     Unless we perform any operation, it won't execute
+       --> Action
+       --> Transform
+  # Parallel Processing
+
+  ## Spark does both Batch and Real time processing
+  ## RDD -> Resilient Distributed Dataset. which is immutable and follows Lazy transformation
+     It has two operations
+       1) Transformation : To create a new RDD (e.g. map, groupBy, reduceBy and filter)
+       2) Action : Instructs spark to perform computation and send the result back to the driver
