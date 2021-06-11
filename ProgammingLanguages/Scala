@@ -1,0 +1,72 @@
+#Type Inference
+In Scala, you don't require to mention data type and function return type explicitly.
+Scala is enough smart to deduce the type of data. The return type of function is determined by the type of last expression present in the function.
+# Scala is statically typed - means cannot change
+    val a = 400
+    val a = "Hello" --- not possible
+
+# lazy val a = {println("evaluated");5}
+  -- no lazy var
+
+### very important ******
+OpChar  --> _? (OpChar followed by underscore )
+backticks --> can also take reserved words
+
+# Scala primitives' can be act as objects also
+
+# FuntionLoops
+val result = (1 to 100).reverse.mkString(",")
+val result1 = (100 to 1 by -1).mkString(",")
+
+
+for( a <- 1 to 10 ){
+        println(a);
+     }
+### Strings are object in Scala
+// String format
+val str = String.format("This is a %s", "Test") // Java style
+
+
+#### METHODS ######
+
+* Methods are defined using def
+* Methods are not Functions
+* returns last statement
+* Unit - Which is similar to void in java. It has a value ()
+*** @tailrec - use tail recursive instead of recursive
+
+# isInstanceOf and AsInstanceOf - No direct casting in scala
+
+
+### Parameterized Types On Methods (Generics in Java, Templates in C++)
+
+def decide[T](b:Boolean,x:T,y:T):T = if(b) x else y
+
+decide(true,4.0,5.0)  -- returns Double
+decide(true,3,"ab")  -- returns Any
+decide(true,3,'c')  -- returns Int
+
+
+#Singleton object
+In Scala, there are no static variables or methods. Scala uses singleton object, which is essentially class with only one object in the source file. Singleton object is declared by using object instead of class keyword.
+
+Scala Pattern Matching
+Pattern matching is a feature of scala. It works same as switch case in other programming languages. It matches best case available in the pattern.
+
+# Never use loops - instead use tail recursive -
+# Call By Name is Lazy (Value evaluated at run time)
+
+# Functions
+def squareIt(x:Int):Int = {
+  x*x
+}
+
+println(squareIt(2))
+
+def transformInt(x:Int, f:Int => Int):Int = {
+  f(x)
+}
+
+transformInt(3,squareIt)
+
+transformInt(3,x => x*x*x)

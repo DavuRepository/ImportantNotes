@@ -1,0 +1,22 @@
+#### Spark has its own map, reduce and filter functions
+## concatenate the lists using
+
+************************Apache Spark*************************************************************************************
+
+## Source --> Ingest --> Process --> Store --> Serve Data
+                           |
+                        Mapreduce
+                        Spark
+  # In memory execution
+     Data is processed in RAM
+  # Lazy execution
+     Unless we perform any operation, it won't execute
+       --> Action
+       --> Transform
+  # Parallel Processing
+
+  ## Spark does both Batch and Real time processing
+  ## RDD -> Resilient Distributed Dataset. which is immutable and follows Lazy transformation
+     It has two operations
+       1) Transformation : To create a new RDD (e.g. map, groupBy, reduceBy and filter)
+       2) Action : Instructs spark to perform computation and send the result back to the driver

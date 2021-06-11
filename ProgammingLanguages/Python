@@ -1,0 +1,55 @@
+# Author - Guido van Rossum
+# Year - 1989. Official on Feb 20, 1991
+# High Level and General purpose language
+# Dynamically typed programming language - No need to declare the type definition
+# Name came from comedy show - The complete month python's circus
+
+#
+a,b = 10, 20
+print('The Sum:', a+b)
+
+# Most of the syntax is barrowed from C & ABC
+
+1) Desktop Applications
+2) Web Applications
+3) Network Applications
+4) Games
+5) Data Analysis
+6) ML,DL,NN,AI, IOT
+
+33 reserved words
+
+##Various distributions are available
+Jython
+Anaconda  - For Big data
+  .
+  .
+  .
+
+# Low level things will be taken care by pvm(python virtual machine) - It has Interpreter
+# Platform Independent
+# Extensible
+# Embedded
+# Extensive library
+
+## Limitations of python
+ * Mobile applications development
+ * Enterprise applications
+ * Performance is Low
+     JIT compiler + PVM (pypy version) - To improve performance
+
+## Flavors of Python
+1) Cpython
+2) Jpytho - Jython
+3) Iron Python - To work with C#
+4) Ruby Python
+5) Anaconda - To work with large volumes of data
+    DS,ML DL
+6) Stackless - Python for concurrency
+7) pypy
+
+### Python versions
+ 1) Python 0.9.0 -- Feb 20th, 1991
+ 2) Python 1.0 -- Jan,1994
+ 3) Python 2.0 -- Oct 16, 2000
+ 4) Python 3.0 -- Dec 3, 2008         
