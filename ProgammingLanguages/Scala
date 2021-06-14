@@ -46,12 +46,39 @@ decide(true,4.0,5.0)  -- returns Double
 decide(true,3,"ab")  -- returns Any
 decide(true,3,'c')  -- returns Int
 
+############################## CLASSES #############################
+
+# uniform access principle -
+
+# case classes - Equals, toString and hashcodes are inbuilt. They cannot be extended
+# Abstract CLASSES
+# Parameterized Types On Classes
+# Parameterized Methods In Classes
+############################## OBJECT #############################
+  1) Need a Singleton
+  2) Need a factory pattern
+  3) Need to implement pattern matching logic
+  4) If you need a utility method, one that does not require an instance or a state, then you'll use an object.
+  5) If you need to set up some kind of default values, then you'll need an object.
+  6) And if you need a main method, you'll need an object.
+
 
 #Singleton object
-In Scala, there are no static variables or methods. Scala uses singleton object, which is essentially class with only one object in the source file. Singleton object is declared by using object instead of class keyword.
+  In Scala, there are no static variables or methods. Scala uses singleton object, which is essentially class with only one object in the source file. Singleton object is declared by using object instead of class keyword.
 
 Scala Pattern Matching
-Pattern matching is a feature of scala. It works same as switch case in other programming languages. It matches best case available in the pattern.
+  Pattern matching is a feature of scala. It works same as switch case in other programming languages. It matches best case available in the pattern.
+
+##Companion objects
+Companion objects are still singletons, but they service a class, an abstract class, or a trait, which we won't be able to cover in this video series, but just think of a trait as a structure that has nothing but abstract methods. The rule for a companion object is the object name has to be the same name as the class that it supports. The object and the class also have to be in the same file. What are some of the benefits of a companion class? For one, they can share each other's private information. If the object has private information, the class can have access to it. If the class has private information, the object has access to it. Because of this relationship, the companion object is in a unique position to create instances of a class it supports and perform operations that other objects can't, because of this close relationship.
+
+# The Magic Apply Method
+# Infix Operators - Infix operators allow a method to be invoked without the dot or parentheses if there is one method parameter. Now it could also be invoked with two or more parameters without the dot, but we would need the parentheses for it. Mathematical operations in Scala already used in fixed operators, and we've been doing it with add, multiply, subtract, divide, and modulo
+# Right-Associative Colons
+
+# Java Options
+
+
 
 # Never use loops - instead use tail recursive -
 # Call By Name is Lazy (Value evaluated at run time)
