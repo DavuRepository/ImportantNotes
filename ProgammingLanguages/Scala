@@ -76,14 +76,75 @@ Companion objects are still singletons, but they service a class, an abstract cl
 # Infix Operators - Infix operators allow a method to be invoked without the dot or parentheses if there is one method parameter. Now it could also be invoked with two or more parameters without the dot, but we would need the parentheses for it. Mathematical operations in Scala already used in fixed operators, and we've been doing it with add, multiply, subtract, divide, and modulo
 # Right-Associative Colons
 
-# Java Options
+# Java Options - Some("Anothony") , None -> Nothing
+
+#### Tuples are heterogeneous - Can have upto 22 values
 
 
 
-# Never use loops - instead use tail recursive -
 # Call By Name is Lazy (Value evaluated at run time)
 
-# Functions
+# #########Functions##############
+
+# Function1 - It is a "Trait"
+# upto Funtion22
+# From Scala 2.12 it got changed used as per JDK 8 - Functions will from Util package
+
+              Object Functions extends App
+              {
+
+                  /*val f1:Function1[Int,Int] = new Function[Int,Int] {
+                    def apply(x:Int) = x+1
+                  }
+
+                  val f0:Function0[Int] = new Function0[Int] {
+                   def apply(): Int  = 1
+                  }
+                  val f2:Function2[Int,String,String] = new Function2[Int,String,String] {
+                     def apply(x:Int,y:String): String  = y+x
+                  }
+
+                 // The above three can also be written as
+
+                  val f1:Int => Int = (x:Int) => x+1
+                  val f0:() => Int = () => 1
+                  val f2:(Int, String) => String = (x:Int,y:String) => x+y
+                 */
+                  // The above three can also be simplefied as
+
+                  val f1  = (x:Int) => x+1
+                  val f0 = () => 1
+                  val f2 = (x:Int,y:String) => x+y
+
+                 println(f1.apply(5))
+                 println(f1(6))
+                 println(f0())
+                 println(f2(3,"Wow"))
+
+                  val f3:String => (String,Int) = (x:String) => (x,x.size)
+                  println(f3("Venkat"))
+              }
+
+
+# Method or Function
+Functions are their own objects. Methods are not functions, and methods belong to a context-- an object, a class, abstract class, trait, et cetera. Again, if it all gets confusing, you always have the choice. You could use an explicit apply. That way it makes it less confusing, and over time you get used to this sort of thing, and everything makes sense.
+
+### CLOUSERS
+Closures are just functions that close around the environment. You can use any element within that function that references the outside world in its own context. That's what a closure is. And they are used to make up functions from that environment. And it's also best that you ensure that you enclose around something that is stable, particularly things like val, immutable objects.
+
+### Currying
+
+
+object MethodorFuction {
+  val f = (x:Int) => x+1
+  def g(x:Int) = x+1
+}
+
+println(MethodorFuction.f.apply(4))
+println(MethodorFuction.f(4))
+println(MethodorFuction.g.(4))
+
+
 def squareIt(x:Int):Int = {
   x*x
 }
@@ -97,3 +158,28 @@ def transformInt(x:Int, f:Int => Int):Int = {
 transformInt(3,squareIt)
 
 transformInt(3,x => x*x*x)
+
+
+####################### COLLECTIONS ###############
+List (1 :: 2 :: 3 :: 4 :: Nil)
+Set
+Map
+Arrays and Repeated parameters --->
+   Arrays in Scala are converted into primitive arrays on the underlying JVM. Behavior wise in Scala, they are similar to lists. But arrays are mutable, so be careful. Perhaps what you could do is you can convert that into an immutable collection after your use. Repeatable parameters use an array, a wrapped array, to hold the possible extra information.
+Ranges
+
+############ COLLECTIONS with Functions ##########
+ 1) MAP (function)
+ 2) filter, filterNot, and exists
+ 3) forEach
+ 4) flatMap -->
+     val a = List(1,2,3,4,5)
+    println(a.map(x => List(-x, 0, x)))
+    println(a.map(x => List(-x, 0, x)).flatten)
+    println(a.flatMap(x => List(-x, 0, x)))
+5) For comprehensions -->
+    ow, for comprehensions are just a map, flatMap, withFilter, and forEach behind the scenes. They look a lot like for loops, but they're not. For one, they could be assigned to a value. They return collections, like sets, lists, options, et cetera. And any object that has a map, a flatMap, withFilter, or a filter, and for each-- they can be used inside of a for comprehension.
+
+6) Fold and Reduce
+7) Zip
+8) Finding Your Method In The API
