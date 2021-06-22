@@ -1,15 +1,27 @@
-net stop MongoDB
-mongod --dbpath "my/new/path" (on Windows, use backslashes + the drive name => mongod --dbpath "C:\my\path").
+@ net stop MongoDB
+@ mongod --dbpath "my/new/path" (on Windows, use backslashes + the drive name => mongod --dbpath "C:\my\path").
 
-mongo "mongodb+srv://sandbox.9ezyl.mongodb.net/sandbox" --username m001-student"
+@ mongo "mongodb+srv://sandbox.9ezyl.mongodb.net/sandbox" --username m001-student"
 
-m001-mongodb-basics
+@ m001-mongodb-basics
 
-show dbs
+@ show dbs
 
-use sample_training
+@ use sample_training
 
-show collections
+@ show collections
+
+
+## Data is stored in BSON and viewed in JSON
+
+  mongodump --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"
+  mongoexport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+  mongorestore --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"  --drop dump
+  mongoimport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --drop sales.json
+
+############ DATA EXPLORER #########
+
+## FIND
 
 db.zips.find({"state": "NY"})
 
@@ -20,7 +32,12 @@ db.zips.find({"state": "NY", "city": "ALBANY"})
 db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()
 
 db.inspections.find({"birth year":1961, "start station name" : "Howard St & Centre St"})
-----------------------------------------------------------------------------------------
+
+### What does it do in the mongo shell? Iternates through the cursor results
+-------------------------------------------------------------------------------
+
+## insert
+ 1)  _id id the unique ID
 
 db.inspections.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },
                        { "_id": 3, "test": 3 }],{ "ordered": false })

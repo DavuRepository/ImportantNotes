@@ -1,12 +1,25 @@
+# To process large data we need Spark than Pandas
+# if the file size is > RAM size
+# 5v of Big Data
+   1) volume
+   2) velocity
+   3) variety
+   4) veracity
+   5) value
+
 #### Spark has its own map, reduce and filter functions
 ## concatenate the lists using
 
+## PySpark Vs Pandas - refere Ranjan Sharma playlist
 ************************Apache Spark*************************************************************************************
+
+ ## Spark has everything - It have machine learning, SQL, Real-time processing
 
 ## Source --> Ingest --> Process --> Store --> Serve Data
                            |
-                        Mapreduce
-                        Spark
+                        1) Mapreduce
+                        2) Spark
+
   # In memory execution
      Data is processed in RAM
   # Lazy execution
@@ -15,8 +28,34 @@
        --> Transform
   # Parallel Processing
 
-  ## Spark does both Batch and Real time processing
+  ## Spark does both Batch and Real time processing(Credit card fraud detection)
   ## RDD -> Resilient Distributed Dataset. which is immutable and follows Lazy transformation
      It has two operations
        1) Transformation : To create a new RDD (e.g. map, groupBy, reduceBy and filter)
        2) Action : Instructs spark to perform computation and send the result back to the driver
+
+
+       Master Node --Salve Node1
+                        :
+                     Slave Node2           RDD is partinitioned across nodes
+                         .
+                         .
+                         .
+                      Slave Node3
+      ## Narrow and Wide transformation in spark
+         DAG - Directed acyclic Graph
+
+         1) Narrow transformation (pipelining - RDD1 <--> RDD2 ) - No shuffling of data between the nodes (ex filter by age.)
+             MAP, FLATMAP MAP PARTITIONS
+             filter
+             sample
+             union
+        2) Wide transformation (Shuffling) between Nodes
+            Computation is expensive
+             Intersection and Join
+             Distinct
+             Cartesian
+             Repartition
+             Coalesce
+             GroupByKey()
+             ReduceByKey()
