@@ -1,0 +1,81 @@
+docker run -p 5000:5000 [XYZ/image] - docker container run -p 5000:5000 [XYZ/image]
+docker run -p 5000:5000 -d [XYZ/image]
+docker logs [id]
+docker container ls -a
+docker images
+docker tag xyz/restservice:0.0.1.Release xyz/restservice:latest
+docker search [image]
+docker history [image ID]
+docker image inspect [image ID]
+docker remove image [image ID]
+
+docker container pause [image ID]
+docker container logs -f [image ID]
+docker container unpause [image ID]
+docker container inspect [image ID]
+docker container prune  - Removes all the stopped containers
+docker container stop [image ID] - gracefully shutdowns the container
+docker container kill [image ID]
+docker container run -p 5000:5000 -d --restart=always [XYZ/image] -> when docker starts, automatically starts the container
+
+docker events
+docker top [image ID] -> shows all the  process running in that container
+docker status ->
+docker container run -p 5000:5000 -m 512m -cpu-quota 5000 -d [XYZ/image] -> memory allocation
+
+docker system df
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+DockerJava image creation	 --
+1)Manual running the step by step to create a docker Image
+  a)Create a application Jar file
+  b)Run the openjdk:8-jdk-alpine - [creates a container]-docker run -dit openjdk:8-jdk-alpine,docker container exec containerName ls /tmp
+  c)Copy the application jar into the container   - docker container cp target/application.jar containerName:/tmp
+  d)Save the new container(copied) - docker container commit --change='CMD ["Java","-jar","/tmp/application.jar"]' containerName newName
+  e)Run the container
+2)Create DockerFile and run - Using docker build command - [docker build -t imageName .]
+3)Spotify using DockerFile
+4)unpack plugin using DockerFile
+5)JIB - Just plugin without any DockerFile - Only for Java
+6)fabric8io - It is first came into market - 2015
+----------------------------------------------------------------------------------------------------------------------------------------------
+Pushing the Docker image to the dockerhub --
+1)Create an account in the dockerhub.
+2)Create a image using Maven-Plugin(spotify) and Docker file.
+3)Run the Docker image in the local Docker engine.
+4)docker container ls
+5)Take the docker id and commit the image for example - [docker commit 9a77abd8e544 davudocker/aws-hello-world-rest-api-1:1]
+6)docker images
+7)docker push davudocker/aws-hello-world-rest-api-1:1
+--------------------------------------------------------
+1) Creating of images
+   a) spotify
+   b) JIB
+   c) fabric8io
+
+## Creation of war file in spring boot with out tomcat
+    a) make the tomcat dependency scope as provided
+    b) extend the springbootApplication class from springbootservletinitializer
+---------------------------------------------------------------
+## Connecting to MySqL and Springboot
+    a) Need to establish network bridge between two containers(MySQL & Springboot)
+  ex:: docker container run -p 8080:8080 --link=mysql -e RDS_HOSTNAME=mysql [imageName+tag] - Not recommended approach
+  ##docker network ls
+     A) BRIDGE
+     B) HOST
+     C) NONE
+## Create custom network -> refer in28minutes documentation
+***************Docker Volumes******************
+append  to the docker run ---> "--volume mysql-database-volume:/var/lib/mysql"
+# Are used to communicate between host(files/folders) and container
+******FRONT END DOCKER IMAGE*********
+2 stage builds are better when multiple developers are creating the images - It will be same (JDK and MAVEN builds are run on container)
+**************Docker Compose**************
+# if you want build/start multiple isolated containers use docker compose
+# scaling the services in DOCKER - docket-compose scale currency-exchange-service=2
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+sudo docker build -t currency-exchange:1.0 .
+sudo docker run -d -p 8080:8080 -t spring-boot:1.0
