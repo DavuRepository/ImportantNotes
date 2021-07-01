@@ -29,6 +29,7 @@
   # Parallel Processing
 
   ## Spark does both Batch and Real time processing(Credit card fraud detection)
+
   ## RDD -> Resilient Distributed Dataset. which is immutable and follows Lazy transformation
      It has two operations
        1) Transformation : To create a new RDD (e.g. map, groupBy, reduceBy and filter)
@@ -59,3 +60,13 @@
              Coalesce
              GroupByKey()
              ReduceByKey()
+
+    #### After Spark 2.0 , It is spark session not spark context #####
+
+    ### Data Frames - contains Row objects, Works with SQL
+      A Data Frame is really just a DataSet of Row Objects
+    ### Data Sets -
+      Can detect the errors at compile time.
+      Can only used in compiled languages [Java, Scala]
+
+   ### val nameDict = spark.sparkContext.broadcast(loadMovieNames())  and UDF- User Defined Function  

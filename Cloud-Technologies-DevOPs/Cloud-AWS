@@ -1,0 +1,45 @@
+Advantages
+-----------------
+1) ON-Demand resource provisioning (Usecase-Online shopping,Startup)
+
+#Billings Info
+  - set billing alerts
+
+# IAM
+  - Managed Policies - In built Policies
+
+
+ECS, Fargate
+---------------
+
+ECS - it is a container orchestration system(container image, configuration->where you will tell no of containers required)
+|
+Cluster
+|
+EC2...
+-------------------------
+container image - configuration
+|
+AWS Fargate
+|
+cluster
+
+# steps for sample ECS
+1. create a container
+2. create a task(mention the container information and how many)
+3. create a service(Give the cluster here)
+task
+ 1) Name
+ 2) task size
+
+ #Service manages the tasks.
+ #Task definition - defines what are specific containers to be part of task
+ #Task - It is a running instance of task definition
+ #Services - Manages the tasks(containers) - Ensures certain num of tasks are running
+ ## We can run/create tasks without service(Batch applications tasks)
+ ## We can also schedule the tasks
+ #ECS with Ec2 instance
+ 1) task some memory and agent take few memory on EC2 instance
+ 2) Task placement
+ 3) ECS instance Vs Ec2 instance Vs container instance
+# Service Events for debugging
