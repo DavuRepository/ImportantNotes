@@ -1,74 +1,11 @@
-1) Rest
-2) Small well choosen Deplyment units
-3) Cloud Enabled
-
-Springcloud config Server - To maintain the configuration of various environments in a single repository
-Dynamically scale up and down
-1) Naming Server(Eureka)
-2) Ribbon(client side load Balancing)
-3) Feign (Easier rest clients)
-
-Visibility and Monitoring
-1)Zipkin Distributing Server - [Sleuth - to assign common requestID across microservices]
-2)Netflix  API Gateway - Netflix zuul API
-Falut Tolerance
-1) Hystrix
-
-
-Advantages of Microservices -
+Advantages -
 1) Adaption of new technologies and process
 2) Dynamic scaling(cloud enabled)
 3) Faster release cycles(new features to market)
 
-
-*******************Latest Version of SpringBoot(> 2.3.2) and Spring Cloud ******************
-1) Spring Cloud Load Balancer instead of Ribbon
-2) Spring Cloud Gateway instead of zuul (Has some disadvantage - not supports non blocking API)
-3) Resilience4j instead of Hystrix
-
-
-- Spring cloud config server - Centrailized Repositry
-
-- RestTemplate - To call other Restfull services
-- FeignClient
-- Naming Server or Service Registry - Eureka Server - @EnableEurekaServer
-
-- if you use FeignClient and Eureka - Loadbalancer is free.
-
-- Setting up Spring Cloud API Gateway - [Previous versions zuul-api-Gateway]
-  To setup common features like authentication,logging
-
-- api-gateway - project
-********
-   http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/INR
-
-   spring.application.name=api-gateway
-   server.port=8765
-
-    eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
-
-    #spring.cloud.gateway.discovery.locator.enabled=true
-    #spring.cloud.gateway.discovery.locator.lowerCaseServiceId=true
-
-    spring.sleuth.sampler.probability=1.0
-
-******
--  Exploring Routes with Spring Cloud Gateway
-# The URL goes through --> api-gateway --> configurationfile-->eureka server -->
-
-- Getting started with Circuit Breaker - Resilience4j
-
-
-
-
-
-
-
-
-
 # Rest/Autonomous Service, Individually deployable and cloud enabled
 
-Design patterns
+#Design patterns
 1) Aggregation pattern
 2) Distributed tracing pattern
 3) Circuit breaker

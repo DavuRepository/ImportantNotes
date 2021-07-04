@@ -1,0 +1,76 @@
+
+## Dispatcher Servlet [/] - Handles all the requests. - Front Controller
+## Springboot configures Dispatcher Servlet
+
+## POST Method to return correct HTTP Status Code and Location
+
+@PostMapping("/users")
+	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
+		User savedUser = service.save(user);
+
+
+		URI location = ServletUriComponentsBuilder
+			.fromCurrentRequest()
+			.path("/{id}")
+			.buildAndExpand(savedUser.getId()).toUri();
+
+		return ResponseEntity.created(location).build();
+
+	}
+##  Implementing Exception Handling - 404 Resource Not Found
+      Write custom exception
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class UserNotFoundException extends RuntimeException {
+	public UserNotFoundException(String message) {
+		super(message);
+	}
+}
+
+## Implementing Generic Exception Handling for all Resources
+
+@ControllerAdvice
+@RestController
+public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+ ..... ExceptionResponse class
+}
+
+### Adding dependency for validation
+  spring-boot-starter-validation
+
+###Implementing HATEOAS for RESTful Services
+   Hypermedia as the Engine of Application State
+   -- Using which we can return link similar to URL
+   Implementation changed in latest spring boot 2.5.2
+
+### Internationalization for RESTful Services
+### Content Negotiation - Implementing Support for XML
+<dependency>
+     <groupId>com.fasterxml.jackson.dataformat</groupId>
+     <artifactId>jackson-dataformat-xml</artifactId>
+   </dependency>
+
+#### Configuring Auto Generation of Swagger Documentation
+   springdoc-openapi v1.5.9
+   <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.5.9</version>
+   </dependency>
+### Monitoring APIs with Spring Boot Actuator
+### Visualizing APIs with HAL Explore - Shows the links of ACTUATOR in a visual form
+#### Implementing Static Filtering for RESTful Service - Filter the response output fields
+     JsonIgnore
+### Implementing Dynamic Filtering for RESTful Service
+###  Versioning RESTful Services - Basic Approach with URIs
+###   Versioning RESTful Services - Header and Content Negotiation Approach
+    1) Different beans/classes
+		2) Params
+		3) Headers
+### Implementing Basic Authentication with Spring Security
+<dependency>
+	 <groupId>org.springframework.boot</groupId>
+	 <artifactId>spring-boot-starter-security</artifactId>
+ </dependency>
+  you can set the credential in application.properties
+
+	
