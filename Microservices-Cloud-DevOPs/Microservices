@@ -11,6 +11,7 @@ Dynamically scale up and down
 Visibility and Monitoring
 1)Zipkin Distributing Server - [Sleuth - to assign common requestID across microservices]
 2)Netflix  API Gateway - Netflix zuul API
+
 Falut Tolerance
 1) Hystrix
 
@@ -57,6 +58,23 @@ Advantages of Microservices -
 # The URL goes through --> api-gateway --> configurationfile-->eureka server -->
 
 - Getting started with Circuit Breaker - Resilience4j
+    dependencies {
+    compile "io.github.resilience4j:resilience4j-spring-boot2:${resilience4jVersion}"
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    }
+
+- If the service is down for some time -  @Retry() for the multiple attempts and call the fall back method
+
+- If the service is down for forever - @CircuitBreaker
+  Three states of CircuitBreaker -
+     1) closed
+     2) open
+     3) half-open
+
+  - Exploring Rate Limiting and BulkHead Features of Resilience4j - V2
+    @RateLimiter(name = "default") -- 10s => allow 10000 requests   
+    @BulkHead(name = "default") => max concurrent calls
 
 
 

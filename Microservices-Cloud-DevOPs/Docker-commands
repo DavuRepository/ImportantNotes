@@ -68,8 +68,11 @@ Pushing the Docker image to the dockerhub --
 ***************Docker Volumes******************
 append  to the docker run ---> "--volume mysql-database-volume:/var/lib/mysql"
 # Are used to communicate between host(files/folders) and container
+
 ******FRONT END DOCKER IMAGE*********
 2 stage builds are better when multiple developers are creating the images - It will be same (JDK and MAVEN builds are run on container)
+
+
 **************Docker Compose**************
 # if you want build/start multiple isolated containers use docker compose
 # scaling the services in DOCKER - docket-compose scale currency-exchange-service=2
