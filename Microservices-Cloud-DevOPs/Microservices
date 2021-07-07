@@ -73,12 +73,17 @@ Advantages of Microservices -
      3) half-open
 
   - Exploring Rate Limiting and BulkHead Features of Resilience4j - V2
-    @RateLimiter(name = "default") -- 10s => allow 10000 requests   
+    @RateLimiter(name = "default") -- 10s => allow 10000 requests
     @BulkHead(name = "default") => max concurrent calls
+******
+Docker Compose file - You define all the containers and start at a time.
+
+-Please refer docker compose file on github of in28Minutes
+https://github.com/in28minutes/spring-microservices-v2/blob/main/04.docker/backup/docker-compose-06-final.yaml
 
 
-
-
+******************Docker, Kubernetes and Microservices - Made for each other*****************
+Refere - Deploying-microservices-Kubernetes
 
 
 
