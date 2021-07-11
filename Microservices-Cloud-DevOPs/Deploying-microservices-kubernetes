@@ -9,13 +9,20 @@
   Service
 
 #Features
-Container orchestration
-Easy Scaling
-Load Balancing
-Self Healing
-Zero Downtime deployments
-Cloud Neutral
+  Container orchestration
+  Easy Scaling
+  Load Balancing
+  Self Healing
+  Zero Downtime deployments
+  Cloud Neutral
 
+  #CLUSTER
+   Which is combination of Master Node and Worker Nodes -
+   Master Node manages all the Worker Nodes
+
+##### commands -
+   https://github.com/in28minutes/spring-microservices-v2/tree/main/05.kubernetes
+########
 
 #To connect from command line to my cluster--->
  gcloud auth login
@@ -35,3 +42,44 @@ gcloud container clusters get-credentials davu--cluster-stackdrive --zone us-cen
    kubectl scale deployment hello-world-davu-rest-api --replicas=3
 
    kubectl set image deployment hello-world-davu-rest-api hello-world-rest-api=in28min/hello-world-rest-api:0.0.4-SNAPSHOT
+
+  # rolling update strategy
+
+  ## Kubernetes Concepts - Pods, Replica Sets & Deployments
+  - Pod has IP Address
+  - kubectl get pods -o wide
+  - Understanding Services in Kubernetes - Always provide access to the URL
+     Loadbalancer Service - which has External IP
+     ClusterIP
+
+     ##Kubernetes
+      1) Master - API Server,
+                   Scheduler(Schedules the pods),
+                   control manager(manages overall health of cluster)
+                   etcd(light weight DB-Key-Value - Disctributerd DB)
+      2) Worker(Node) --> pod --> container
+         it should run a docker or rocket
+         Node agent (kubelet)
+         Network component (kube-proxy)
+         Container Runtime (CRI - docker, rkt)
+         PODS
+     # Kubernetes supports 5000 worker nodes in a cluster
+
+     # Install GCloud - Google cloud SDK
+     # Install kubectl
+
+    # spring-boot:build-image -DskipTests
+
+    # environment variables are created by kubernetes only based on the deployment name(appends to the name)
+
+    #  Creating Declarative Configuration Kubernetes YAML for Microservices
+       - kubectl apply -f deplyment.yaml
+
+    # Enable Cloud Logging API
+    # Enable Stackdriver API - Monitoring, error, trace
+    Environment variables can be maintained in - configmap
+
+  **************** Configuring Liveness and Readiness Probes for Microservices with K8S *******
+  # Autoscaling Microservices with Kubernetes
+  - kubectl autoscale deployment currency-exchange --min=1 --max=3 --cpu-percent=5
+  - kubectl get hpa
