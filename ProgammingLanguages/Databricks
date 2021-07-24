@@ -1,0 +1,7 @@
+What is Databricks workspace?
+ Contains all the compute resources needed to support Databricks
+   1) File Storage
+   2) Virtual Machine to run the Databricks User Interface
+   3) Databricks Software
+   4) Network stuff
+   5) Integration with the Cloud provider

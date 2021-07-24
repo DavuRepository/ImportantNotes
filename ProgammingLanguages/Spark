@@ -69,4 +69,9 @@
       Can detect the errors at compile time.
       Can only used in compiled languages [Java, Scala]
 
-   ### val nameDict = spark.sparkContext.broadcast(loadMovieNames())  and UDF- User Defined Function  
+   ### val nameDict = spark.sparkContext.broadcast(loadMovieNames())  and UDF- User Defined Function
+
+
+  ## Superhero Degrees of Separation: Introducing Breadth-First Search
+
+   ## Item-Based Collaborative Filtering in Spark, cache(), and persist()
