@@ -1,0 +1,15 @@
+YAML is a serialization language - standard format to trasmit over wire
+  YAML Ain't Markup Language
+
+  Syntax -
+    1. key-value pairs
+    2. Object -
+    3. boolean
+    4. lists
+    5. multilinestring : >  --- also '|'
+       This is line 1,
+       This is line 2
+
+    6. environment variables   $
+    7. placeholders -{{}}
+    8. multiple yaml files in a single file by separating three hypens ---

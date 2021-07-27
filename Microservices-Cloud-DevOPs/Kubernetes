@@ -21,9 +21,45 @@
   6) Nomad(Clustering and Scheduling, Unix flavour)
 
   ##Kubernetes
-   1) Master - API Server, Scheduler(Schedules the pods), control manager, etcd(light weight DB-Key-Value)
+   1) Master -
+      a)  API Server - Cluster Gateway and also gatekeepr for authentication
+      b)  Scheduler - Schedules the pods, check the availability of resources on node and decide to create the pod
+      c)  control manager - detects the cluster state changes (when pods die)
+      d)  etcd - light weight DB-Key-Value (Every change in the cluster is stored in it)
    2) Worker(Node) --> pod --> container
-      it should run a docker or rocket
-      kubelet
-      kube-proxy
-  # Kubernetes supports 5000 worker nodes in a cluster    
+      a)  Docker or rocket container runtime
+      b)  kubelet - communicates/interacts with both - the container and node
+      c) kube-proxy - forwards the requests from services to PODS
+
+  # Kubernetes supports 5000 worker nodes in a cluster
+--------------------------------------------------------Tech World by Nana---------------------------------------------------------------------
+POD -   Each pod gets it own IP address
+Service - Permanent IP address
+Ingress - Customized URL
+
+ConfigMap -  external configuration of your application like DB_URL = mongo-db
+Secret - Used to store secret data. base64 encoded form , usename and pwd
+
+volumes - Data storage
+
+Repilicas(two pods) - are connected through service - Load Balanceer
+
+Deploymnet - It is a blue print. For Stateless Apps (ex - can also used to define replicasets)
+
+StatefulSet =  For Statrfull Apps - Databases (This is not a simple task, that's why they are manager outside the cluster)
+
+###
+kubectl create deployment nginx-dep1 --image=nginx
+kubectl get deployment
+kubectl get pod
+kubectl get replicatset
+
+Layers of abstraction
+
+1) Deployment manages a
+     |
+2) Replicasets manages a
+      |
+3)  Pods is an abstraction of container
+     |
+4) container        
