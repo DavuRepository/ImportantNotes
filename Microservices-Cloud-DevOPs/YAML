@@ -13,3 +13,13 @@ YAML is a serialization language - standard format to trasmit over wire
     6. environment variables   $
     7. placeholders -{{}}
     8. multiple yaml files in a single file by separating three hypens ---
+
+
+
+The file has 3 parts
+
+1) Metadata
+2) Specification - pertaining to kind(Deployment or Service)
+3) Status - It is automatically updated by Kubernetes
+
+Selectors and Labels  - To connect the service to deployment

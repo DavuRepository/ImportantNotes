@@ -32,7 +32,8 @@
       c) kube-proxy - forwards the requests from services to PODS
 
   # Kubernetes supports 5000 worker nodes in a cluster
---------------------------------------------------------Tech World by Nana---------------------------------------------------------------------
+
+=====================================================TechWorld by Nana=======================================================
 POD -   Each pod gets it own IP address
 Service - Permanent IP address
 Ingress - Customized URL
@@ -62,4 +63,42 @@ Layers of abstraction
       |
 3)  Pods is an abstraction of container
      |
-4) container        
+4) container
+
+### commands for CRUD Operations
+kubectl edit deployment nginx-dep1 --image=nginx
+kubectl create deployment mongo-dep1 --image=mongo
+kubectl delete deployment [name]
+kubectl apply -f [filename]
+
+### commands for Logging
+kubectl logs [podname]
+kubectl exec --it [podname] --bin/bash - To get Interactive terminal
+kubectl describe pod [podname] - Get info about pod
+
+### Namespace (Organize resources in a namespace)
+Virtual cluster in a cluster
+kubectl get namespace
+4 Namespaces per default
+1) kube-sytem(System process, Master, Kubectl process)
+2) Kube-public (A configMap which contains cluster info)
+3) Kube-node-lease (heartbeat of the nodes-determines the availability of nodes)
+4) default - create a resource
+
+Resources grouped in Namespaces
+kubens tool to change the default namespace and make other namespace active
+
+### Ingress
+ To define external domain name to the URL instead of IP Address and Port
+ Ingress Controller Pod -
+       evaluates all the rules
+       manages redirection
+        entrypoint to cluster
+
+  ### Helm - Package Manager for K8s
+     - Suppose if you want install Elastic Stack for Logging
+     -  Bundle of YAML Files - Helm charts (Place in Helm repository)
+     -   Use Case - Template engine (Need to deploy various Microservices with minor differences)
+                    Some Applications across different environments(Development, Staging, Production)        
+
+ ### Persistence Data in K8s using VOLUMES
