@@ -3,7 +3,7 @@ git init [repositoryname]
 git clone
 
 git status
-git add [file name] 	 
+git add [file name]
 git add .
 git add --all (after deleting all files)
 
@@ -30,3 +30,7 @@ git log - history
 git log -p -> history with complete details
 git checkout -- [filename] -> undo changes from working directory
 git reset HEAD [filename] -> undo changes from staging ( Just added to staging and not committed - from history the latest file is undo)
+
+/******
+Committing the file on 23-Jun-2022
+****/
