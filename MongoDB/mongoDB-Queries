@@ -56,7 +56,7 @@ db.pets.insert({
  "climate": ["polar", "equatorial", "continental", "mountain"]
 })
 ---------------------------------------------------------------------
-#Update Operators - enables to modify the data
+# Update Operators - enables to modify the data
  ex : $inc , $set, $unset
 #Query Operators -
  #Comparision Operators ---->
@@ -69,7 +69,7 @@ db.zips.find({"pop" : {"$lt":1000}}).count()
 db.trips.find({"birth year":1998}).count()
 db.trips.find({"birth year":{"$gt":1998}}).count()
 ------------------------------------------------------------------
-#Logic Operators --->
+# Logic Operators --->
  $and, $or, $nor, $not
  db.routes.find({ "$and": [ { "$or" :[ { "dst_airport": "KZN" },
                                     { "src_airport": "KZN" }
@@ -167,3 +167,10 @@ Important: We will regularly start with a clean database server (i.e. all data w
 To get rid of your data, you can simply load the database you want to get rid of (use databaseName) and then execute db.dropDatabase().
 
 Similarly, you could get rid of a single collection in a database via db.myCollection.drop().
+
+
+---------------------------------------------------------------------------------------------
+## Notes
+1) Update is different from UpdateOne and UpdateMany. Update is similar to replaceOne
+2) find query returns the cursor - use forEach and pass a function to iterate all the documents (in shell)
+3) Projection - to save the bandwidth [ex - db.flightsdata.find({},{name:1,_id:0}).pretty()]
